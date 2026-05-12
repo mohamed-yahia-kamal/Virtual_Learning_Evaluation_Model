@@ -288,7 +288,7 @@ streamlit run app.py
 
 | Name | Role |
 |------|------|
-| **Manar Khalid** ⭐ | Team Leader — Project management, pipeline oversight & quality review |
+| Manar Khalid | Team Leader — Project management, pipeline oversight & quality review |
 | Mohamed Elsakka | Data Engineer — Data loading, preprocessing & table merging |
 | Mohamed Yahia Kamal | ML Engineer — Model building, training, tuning & evaluation |
 | Shaimaa Essam | Feature Engineer — Feature design, encoding & target variable definition |
