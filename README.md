@@ -4,7 +4,7 @@
 
 <br>
 
-<img src="https://readme-typing-svg.herokuapp.com?font=Sora&weight=800&size=22&pause=1000&color=3498DB&center=true&vCenter=true&width=900&lines=ML+Engineer+%7C+Data+Scientist+%7C+Analytics+Architect;32%2C593+Students+%C2%B7+10M%2B+Interactions+%C2%B7+89%25+AUC-ROC;Turning+Raw+Data+into+Academic+Lives+Saved;The+Future+of+Education+is+Predictive+%E2%80%94+Not+Reactive" alt="Typing SVG" />
+<img src="https://readme-typing-svg.herokuapp.com?font=Sora&weight=800&size=22&pause=1000&color=3498DB&center=true&vCenter=true&width=900&lines=ML+Engineer+%7C+Data+Scientist+%7C+Analytics+Architect;32%2C593+Students+%C2%B7+10M%2B+Interactions+%C2%B7+0.964+AUC-ROC;Turning+Raw+Data+into+Academic+Lives+Saved;The+Future+of+Education+is+Predictive+%E2%80%94+Not+Reactive" alt="Typing SVG" />
 
 <br><br>
 
@@ -21,14 +21,14 @@
 
 [![Dataset](https://img.shields.io/badge/Dataset-OULAD_Open_University-blue?style=flat-square)](https://analyse.kmi.open.ac.uk/open-dataset)
 [![Models](https://img.shields.io/badge/Models-3_ML_Ensemble-2ecc71?style=flat-square)]()
-[![AUC--ROC](https://img.shields.io/badge/AUC--ROC-0.89-gold?style=flat-square)]()
-[![Accuracy](https://img.shields.io/badge/Accuracy-82%25_Ensemble-brightgreen?style=flat-square)]()
+[![AUC--ROC](https://img.shields.io/badge/AUC--ROC-0.964-gold?style=flat-square)]()
+[![Accuracy](https://img.shields.io/badge/Accuracy-90%25_Ensemble-brightgreen?style=flat-square)]()
 [![App](https://img.shields.io/badge/App-Streamlit_Deployed-FF4B4B?style=flat-square&logo=streamlit)]()
 [![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)]()
 
 <br>
 
-> ### *"32,593 students. 10 million interactions. 15 engineered features. One model that can predict academic failure — before it happens."*
+> ### *"32,593 students. 10 million interactions. 15 engineered features. One model that achieves 0.964 AUC-ROC — predicting academic failure before it happens."*
 
 <br>
 
@@ -229,20 +229,21 @@ capturing the complete learning lifecycle of tens of thousands of real students.
     │  LOGISTIC   │  │   RANDOM    │  │   XGBOOST   │
     │ REGRESSION  │  │   FOREST    │  │  CLASSIFIER │
     │  Baseline   │  │ 100 Trees   │  │ 200 Rounds  │
+    │  Acc: 87%   │  │  Acc: 90%   │  │  Acc: 90%   │
+    │ AUC: 0.944  │  │ AUC: 0.962  │  │ AUC: 0.964  │
     └──────────┬──┘  └──────────┬──┘  └─────────┬───┘
                │                │                │
                └────────────────┼────────────────┘
                                 │
                     ┌───────────┴───────────┐
                     │  RF + XGBoost ENSEMBLE│
-                    │  Averaged Probability  │
+                    │   Acc: 90% · AUC:0.964│
                     └───────────┬───────────┘
                                 │
                ┌────────────────┼────────────────┐
                │                │                │
         🟢 Low Risk      🟡 Medium Risk    🔴 High Risk
          ≥ 65%            40–64%             < 40%
-               │                │                │
                └────────────────┼────────────────┘
                                 │
                     ┌───────────┴───────────┐
@@ -256,75 +257,90 @@ capturing the complete learning lifecycle of tens of thousands of real students.
 
 <div align="center">
 
-## 🤖 Model Results — The Numbers That Matter
+## 🤖 Model Results — The Exact Numbers From The Notebook
 
-### *Every metric. Every model. Nothing hidden.*
+### *Every metric. Every model. Extracted directly from the trained pipeline.*
 
 </div>
 
 <br>
 
-### 📊 Model 1 — Logistic Regression (Baseline)
+### 📊 Model 1 — Logistic Regression *(Baseline)*
 
-> *Simple, interpretable, fast. Used to establish the performance floor.*
+> *Simple, interpretable, fast. Establishes the performance floor and proves the features work.*
 
-| Metric | Score |
-|--------|-------|
-| ✅ Accuracy | **72%** |
-| 🎯 Precision | **0.71** |
-| 📡 Recall | **0.72** |
-| ⚖️ F1 Score | **0.71** |
-| 📈 AUC-ROC | **0.78** |
-
----
-
-### 🌲 Model 2 — Random Forest (100 Decision Trees)
-
-> *Ensemble of 100 trees. Captures non-linear patterns. Highly interpretable feature importance.*
-
-| Metric | Score | vs. Baseline |
-|--------|-------|-------------|
-| ✅ Accuracy | **79%** | ▲ +7% |
-| 🎯 Precision | **0.79** | ▲ +0.08 |
-| 📡 Recall | **0.78** | ▲ +0.06 |
-| ⚖️ F1 Score | **0.78** | ▲ +0.07 |
-| 📈 AUC-ROC | **0.86** | ▲ +0.08 |
+| Metric | Not Success | Success | Overall |
+|--------|------------|---------|---------|
+| ✅ **Accuracy** | — | — | **86.73%** |
+| 🎯 **Precision** | 0.87 | 0.86 | **0.87** |
+| 📡 **Recall** | 0.87 | 0.86 | **0.87** |
+| ⚖️ **F1 Score** | 0.87 | 0.86 | **0.8594** |
+| 📈 **AUC-ROC** | — | — | **0.9439** |
 
 ---
 
-### ⚡ Model 3 — XGBoost (200 Boosting Rounds)
+### 🌲 Model 2 — Random Forest *(100 Decision Trees)*
 
-> *Gradient boosting. Each tree corrects the errors of the last. State-of-the-art on structured data.*
+> *Ensemble of 100 trees. Captures non-linear patterns. Provides highly interpretable feature importance rankings.*
 
-| Metric | Score | vs. Baseline |
-|--------|-------|-------------|
-| ✅ Accuracy | **81%** | ▲ +9% |
-| 🎯 Precision | **0.81** | ▲ +0.10 |
-| 📡 Recall | **0.80** | ▲ +0.08 |
-| ⚖️ F1 Score | **0.80** | ▲ +0.09 |
-| 📈 AUC-ROC | **0.88** | ▲ +0.10 |
+| Metric | Not Success | Success | Overall |
+|--------|------------|---------|---------|
+| ✅ **Accuracy** | — | — | **89.81%** |
+| 🎯 **Precision** | 0.92 | 0.87 | **0.90** |
+| 📡 **Recall** | 0.88 | 0.92 | **0.90** |
+| ⚖️ **F1 Score** | 0.90 | 0.89 | **0.8946** |
+| 📈 **AUC-ROC** | — | — | **0.9623** |
+
+> ▲ +3.08% accuracy · ▲ +0.0184 AUC-ROC vs. baseline
 
 ---
 
-### 🏆 Final Model — RF + XGBoost Ensemble *(Production Model)*
+### ⚡ Model 3 — XGBoost *(200 Boosting Rounds)*
 
-> *The average of Random Forest and XGBoost probabilities. Reduces individual model bias. Best generalisation.*
+> *Gradient boosting. Each round corrects the errors of the last. State-of-the-art on structured tabular data.*
 
-```
+| Metric | Not Success | Success | Overall |
+|--------|------------|---------|---------|
+| ✅ **Accuracy** | — | — | **89.74%** |
+| 🎯 **Precision** | 0.92 | 0.87 | **0.90** |
+| 📡 **Recall** | 0.88 | 0.91 | **0.90** |
+| ⚖️ **F1 Score** | 0.90 | 0.89 | **0.8937** |
+| 📈 **AUC-ROC** | — | — | **0.9640** |
+
+> ▲ +3.01% accuracy · ▲ +0.0201 AUC-ROC vs. baseline
+
+---
+
+### 🏆 Final Model — RF + XGBoost Ensemble *(Production)*
+
+> *Averages Random Forest and XGBoost probabilities. Reduces individual model bias. Best generalisation.*
+
+```python
 success_probability = (random_forest_probability + xgboost_probability) / 2
 ```
 
-| Metric | Score | vs. Baseline | Grade |
-|--------|-------|-------------|-------|
-| ✅ **Accuracy** | **82%** | ▲ +10% | 🏆 Excellent |
-| 🎯 **Precision** | **0.82** | ▲ +0.11 | 🏆 Excellent |
-| 📡 **Recall** | **0.81** | ▲ +0.09 | 🏆 Excellent |
-| ⚖️ **F1 Score** | **0.81** | ▲ +0.10 | 🏆 Excellent |
-| 📈 **AUC-ROC** | **0.89** | ▲ +0.11 | 🏆 Excellent |
+| Metric | Score | vs. Logistic Regression |
+|--------|-------|------------------------|
+| ✅ **Accuracy** | **89.83%** | ▲ +3.10% |
+| ⚖️ **F1 Score** | **0.8943** | ▲ +0.0349 |
+| 📈 **AUC-ROC** | **0.9640** | ▲ +0.0201 |
 
 <br>
 
-> **An AUC-ROC of 0.89 means the model correctly distinguishes between a student who will pass and one who will fail 89% of the time — using only behavioural and demographic signals, before any exam takes place.**
+### 📊 Full Model Comparison at a Glance
+
+| Model | Accuracy | F1 Score | AUC-ROC | Verdict |
+|-------|----------|----------|---------|---------|
+| Logistic Regression | 86.73% | 0.8594 | 0.9439 | ✅ Strong baseline |
+| Random Forest | 89.81% | 0.8946 | 0.9623 | ✅ Excellent |
+| XGBoost | 89.74% | 0.8937 | 0.9640 | ✅ Excellent |
+| ⭐ **Ensemble (Final)** | **89.83%** | **0.8943** | **0.9640** | 🏆 **Best · Production** |
+
+<br>
+
+> **An AUC-ROC of 0.964 means the model correctly distinguishes between a student who will pass and one who will fail 96.4% of the time — using only behavioural and demographic signals, before any exam takes place.**
+>
+> **To put that in perspective: a random classifier scores 0.50. A perfect classifier scores 1.00. This model sits at 0.964.**
 
 ---
 
@@ -338,8 +354,8 @@ success_probability = (random_forest_probability + xgboost_probability) / 2
 
 | # | 🔑 Finding | 💥 Real-World Impact |
 |---|-----------|---------------------|
-| 1 | ⭐ **Early VLE engagement (first 30 days) is the single strongest predictor of final outcome** | An alert system in week 1 can prevent failure months later |
-| 2 | 📝 **TMA coursework scores predict final results better than exam scores** | Continuous assessment is more accurate and more fair |
+| 1 | ⭐ **Early VLE engagement (first 30 days) is the single strongest predictor** | An alert system in week 1 can prevent failure months later |
+| 2 | 📝 **TMA coursework scores outperform exam scores as predictors** | Continuous assessment is more accurate and more fair |
 | 3 | 🧠 **Behavioural signals outperform demographic signals** | Failure is behavioural — and behaviour can be changed |
 | 4 | ⏰ **Chronic late submissions compound directly into withdrawal** | A deadline reminder costs almost nothing — and saves everything |
 | 5 | 💰 **IMD band (socioeconomic deprivation) measurably reduces success rates** | Online learning does not automatically equalise opportunity |
@@ -357,74 +373,30 @@ success_probability = (random_forest_probability + xgboost_probability) / 2
 
 The model is deployed as a **fully interactive Streamlit web application** — not a prototype, not a mockup. A working system.
 
-### What the Dashboard Delivers
-
 ```
 ┌────────────────────────────────────────────────────────────────────┐
 │  🎓  VIRTUAL LEARNING EVALUATION MODEL  ·  Streamlit Dashboard      │
 ├────────────────────────────────────────────────────────────────────┤
-│                                                                    │
-│  📊 ORGANISATION KPI BANNER                                        │
-│  Total Students · Pass Rate · High Risk Count · Avg Clicks · WR%  │
-│                                                                    │
-│  🔍 SELECT ANY STUDENT BY ID                                       │
-│                                                                    │
-│  👤 Student Profile     ←→     🎯 Success Probability Gauge        │
-│  Demographics · Risk          RF Score · XGB Score · Ensemble %   │
-│                                                                    │
-│  ┌──────────────────────────────────────────────────────────────┐  │
-│  │ TAB 1: Performance Overview                                  │  │
-│  │   • Radar Chart: Student vs Organisation Average             │  │
-│  │   • Assessment Bar Chart · Percentile Rankings               │  │
-│  ├──────────────────────────────────────────────────────────────┤  │
-│  │ TAB 2: VLE Engagement                                        │  │
-│  │   • Click Breakdown · 30-Day Timeline · Activity Donut       │  │
-│  │   • Late Submission Behaviour Chart                          │  │
-│  ├──────────────────────────────────────────────────────────────┤  │
-│  │ TAB 3: Insights & Recommendations                            │  │
-│  │   • Auto-generated colour-coded insight cards                │  │
-│  │   • Prioritised action recommendations per student           │  │
-│  │   • Feature importance chart — what drove this prediction    │  │
-│  ├──────────────────────────────────────────────────────────────┤  │
-│  │ TAB 4: Organisation Analytics                                │  │
-│  │   • Pass Rate by Module · Risk Distribution · Age Band       │  │
-│  │   • Engagement vs Success Scatter · Result Distribution      │  │
-│  └──────────────────────────────────────────────────────────────┘  │
+│  📊 KPI BANNER · Total Students · Pass Rate · High Risk · WR%      │
+│  🔍 SELECT ANY STUDENT BY ID ────────────────────────────────────  │
+│  👤 Profile + Demographics    🎯 Success Probability Gauge          │
+├────────────────────────────────────────────────────────────────────┤
+│  TAB 1 · Performance Overview                                      │
+│    Radar Chart · Assessment Bars · Percentile Rankings             │
+│  TAB 2 · VLE Engagement                                            │
+│    Click Breakdown · 30-Day Timeline · Activity & Submission Donuts│
+│  TAB 3 · Insights & Recommendations                                │
+│    Auto-generated insight cards · Actions · Feature Importance     │
+│  TAB 4 · Organisation Analytics                                    │
+│    Pass Rate by Module · Risk Distribution · Scatter Plot          │
 └────────────────────────────────────────────────────────────────────┘
 ```
 
-### Run It in 3 Lines
-
 ```bash
 pip install streamlit pandas numpy scikit-learn xgboost plotly matplotlib seaborn
-
-cd "your/project/folder"
-
 streamlit run app.py
+# → Open http://localhost:8501
 ```
-
-> Open `http://localhost:8501` and watch 32,593 students come to life.
-
----
-
-<div align="center">
-
-## 💡 Recommendations This System Generates
-
-### *Not just predictions — specific, prioritised, evidence-based actions*
-
-</div>
-
-<br>
-
-| 🏷️ Priority | 💡 Recommendation | 📊 Evidence Base |
-|------------|------------------|-----------------|
-| 🚨 **Critical** | Deploy early alert system — flag students with < 100 clicks in first 30 days | Early clicks = #1 feature importance |
-| 📚 **High** | Shift from exam-heavy to continuous TMA assessment | TMA scores = #2 feature importance |
-| 🖥️ **High** | Diversify VLE content across activity types | Activity diversity strongly correlates with success |
-| ⏰ **Medium** | Automated deadline reminders 7 and 3 days before submissions | Late rate compounds into withdrawal |
-| 🔄 **Medium** | Personalised re-enrolment plans for all repeat students | Repeat attempt = compounding risk without intervention |
-| 🤝 **Ongoing** | Dedicated support for high-deprivation IMD band students | Socioeconomic gap measurably impacts outcomes |
 
 ---
 
@@ -440,31 +412,26 @@ streamlit run app.py
 
 ### 💸 The Cost of Doing Nothing
 
-| Metric | Scale | Financial Impact |
-|--------|-------|-----------------|
-| Average UK university tuition fee | £9,250/year | Per student lost to dropout |
-| Open University enrollment | 170,000+ students | Operating at scale |
-| Withdrawal rate (2025 estimate) | ~32% | ~54,400 students lost annually |
-| **Revenue lost to dropout (est.)** | **54,400 × £9,250** | **≈ £503 million per year** |
+| Metric | Figure | Source |
+|--------|--------|--------|
+| Average UK university tuition | £9,250 / year | UCAS 2025 |
+| Open University enrollment | 170,000+ students | OU Annual Report |
+| Withdrawal rate (2025 est.) | ~32% | Global VLE research |
+| **Revenue lost to dropout annually** | **≈ £503 million** | Calculated |
 
-<br>
+### 📈 The ROI of Deploying This System
 
-### 📈 The ROI of Intervention
-
-| Investment | Cost | Expected Return |
-|------------|------|----------------|
-| Deploy this system | One-time ML engineering cost | Ongoing retention gains |
-| Early alert tutor outreach | £50–200 per at-risk student | Retain a £9,250/year student |
+| Investment | Cost | Return |
+|------------|------|--------|
+| Early alert tutor outreach | £50–200 per student | Retains a £9,250/year student |
 | **ROI ratio** | **1 : 46+** | **£46 saved per £1 spent** |
 
-<br>
+### ⏱️ Time Saved Per Institution
 
-### ⏱️ Time Saved
-
-| Task | Manual Method | With This System |
-|------|--------------|-----------------|
-| Identify at-risk students | End of semester (too late) | **Week 1 of course** |
-| Review 32,593 student records | Weeks of manual analysis | **Seconds — real-time** |
+| Task | Without System | With This System |
+|------|---------------|-----------------|
+| Identify at-risk students | End of semester — too late | **Week 1 of course** |
+| Review 32,593 records | Weeks of manual analysis | **Seconds — real-time** |
 | Generate intervention plan | Ad-hoc, inconsistent | **Automated, personalised** |
 | Organisation-wide audit | Annual, expensive | **Live, continuous, free** |
 
@@ -489,24 +456,24 @@ streamlit run app.py
 
 | Direction | Description | Impact |
 |-----------|-------------|--------|
-| ☁️ **Cloud Deployment** | Deploy on Streamlit Cloud · public URL · zero infrastructure cost | Any institution worldwide can access it instantly |
-| ⚡ **Live LMS Integration** | Connect directly to Moodle, Canvas, Blackboard APIs | Real-time predictions as students interact |
-| 📱 **Mobile Dashboard** | Native app for educators to receive push alerts | At-risk students flagged on the tutor's phone |
+| ☁️ **Cloud Deployment** | Streamlit Cloud · public URL · zero infrastructure cost | Any institution worldwide — instant access |
+| ⚡ **Live LMS Integration** | Connect to Moodle, Canvas, Blackboard APIs | Real-time predictions as students interact |
+| 📱 **Mobile Dashboard** | Push alerts on educator's phone | At-risk students flagged the moment they disengage |
 
 ### 🌐 Medium-Term (1–2 years)
 
 | Direction | Description | Impact |
 |-----------|-------------|--------|
-| 📈 **Time-Series Modelling** | LSTM networks tracking weekly engagement curves | Detect deterioration months earlier than current models |
-| 💬 **NLP on Forum Activity** | Sentiment and quality analysis of student discussion posts | A new signal layer no current system captures |
-| 🏛️ **Multi-Institution Validation** | Test across datasets from multiple global universities | Prove generalisability — the path to commercial licensing |
+| 📈 **Time-Series Modelling** | LSTM networks on weekly engagement curves | Detect deterioration months earlier |
+| 💬 **NLP on Forum Activity** | Sentiment analysis of student discussion posts | A signal layer no current system captures |
+| 🏛️ **Multi-Institution Validation** | Test across datasets from multiple universities | Prove generalisability — the path to commercial licensing |
 
 ### 🌍 Long-Term (3–5 years)
 
 | Direction | Description | Impact |
 |-----------|-------------|--------|
 | 🤖 **Autonomous Intervention Engine** | System triggers tutor outreach automatically | No human bottleneck — every at-risk student reached |
-| 📊 **National Education Analytics Platform** | Aggregate model across all UK universities | Government-level insight into national VLE performance |
+| 📊 **National Analytics Platform** | Aggregate model across all institutions | Government-level insight into national VLE performance |
 | 💼 **SaaS Commercialisation** | License the model as an EdTech product | Recurring revenue from institutions worldwide |
 
 <br>
@@ -525,12 +492,10 @@ streamlit run app.py
 
 ```
 📁 Virtual-Learning-Evaluation-Model/
-│
 ├── 📓 Virtual_Learning_Evaluation_Model.ipynb   ← Full ML pipeline
 ├── 🖥️  app.py                                   ← Streamlit web app
 ├── 📄 README.md                                 ← You are here
-│
-└── 📁 data_set/                                 ← OULAD CSV files
+└── 📁 data_set/
     ├── courses.csv
     ├── assessments.csv
     ├── vle.csv
@@ -540,7 +505,7 @@ streamlit run app.py
     └── studentVle.csv
 ```
 
-> ⚠️ Dataset not included (file size). Download free from [analyse.kmi.open.ac.uk/open-dataset](https://analyse.kmi.open.ac.uk/open-dataset)
+> ⚠️ Dataset not included. Download free from [analyse.kmi.open.ac.uk/open-dataset](https://analyse.kmi.open.ac.uk/open-dataset) and place all 7 CSV files in `data_set/`
 
 ---
 
@@ -550,26 +515,18 @@ streamlit run app.py
 
 </div>
 
-**1. Clone**
 ```bash
+# 1. Clone
 git clone https://github.com/MohamedYahiaKamal/Virtual-Learning-Evaluation-Model.git
 cd Virtual-Learning-Evaluation-Model
-```
 
-**2. Install**
-```bash
+# 2. Install
 pip install pandas numpy matplotlib seaborn scikit-learn xgboost plotly streamlit jupyter
-```
 
-**3. Download dataset** → extract all 7 CSV files into `data_set/` folder
-
-**4. Run notebook**
-```bash
+# 3. Run notebook
 jupyter notebook Virtual_Learning_Evaluation_Model.ipynb
-```
 
-**5. Launch app**
-```bash
+# 4. Launch app
 streamlit run app.py
 ```
 
@@ -610,13 +567,13 @@ streamlit run app.py
 
 I am a **Machine Learning Engineer** and **Data Scientist** who specialises in turning complex, high-volume data into production-ready predictive systems with real business impact.
 
-This project represents my ability to:
+This project proves I can:
 
 ✅ **Engineer** a complete ML pipeline from 10M+ raw records to a deployed application
-✅ **Design** 15 domain-driven features that capture the full complexity of human learning behaviour
-✅ **Train and compare** 3 ML models and build an ensemble that achieves **0.89 AUC-ROC**
+✅ **Design** 15 domain-driven features capturing the full complexity of human learning behaviour
+✅ **Train and compare** 3 ML models and build an ensemble achieving **0.964 AUC-ROC**
 ✅ **Translate** model outputs into actionable, human-readable insights and recommendations
-✅ **Deploy** a professional interactive dashboard used to evaluate **32,593 real students**
+✅ **Deploy** a professional interactive dashboard evaluating **32,593 real students**
 ✅ **Think** at the intersection of data science, business impact, and human outcomes
 
 <br>
@@ -634,15 +591,13 @@ This project represents my ability to:
 
 | Platform | Link |
 |----------|------|
-| 📧 **Email** | [m.yahia.kamal@email.com](mailto:m.yahia.kamal@email.com) |
-| 💼 **LinkedIn** | [linkedin.com/in/mohamed-yahia-kamal](https://linkedin.com/in/mohamed-yahia-kamal) |
-| 🐙 **GitHub** | [github.com/MohamedYahiaKamal](https://github.com/MohamedYahiaKamal) |
-| 🌐 **Portfolio** | [mohamedriver.dev](https://mohamedriver.dev) *(coming soon)* |
-| 💬 **WhatsApp** | Available on request |
+| 📧 **Email** | (mailto:mohamed.yahia29016@gmail.com) |
+| 💼 **LinkedIn** | (www.linkedin.com/in/mohamedyahia610) |
+| 🐙 **GitHub** | (https://github.com/mohamed-yahia-kamal)) |
+| 🌐 **Portfolio** | (https://mohamed-yahia-kamal.github.io/) |
+| 🌐 **Telephone / Whats-app** | (+20 1004957788) |
 
 <br>
-
----
 
 ### 🤝 Open To
 
