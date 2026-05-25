@@ -591,7 +591,7 @@ This project proves I can:
 
 | Platform | Link |
 |----------|------|
-| 📧 **Email** | (mailto:mohamed.yahia29016@gmail.com) |
+| 📧 **Email** | (mohamed.yahia29016@gmail.com) |
 | 💼 **LinkedIn** | (www.linkedin.com/in/mohamedyahia610) |
 | 🐙 **GitHub** | (https://github.com/mohamed-yahia-kamal)) |
 | 🌐 **Portfolio** | (https://mohamed-yahia-kamal.github.io/) |
